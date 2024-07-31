@@ -1,0 +1,127 @@
+<template>
+    <lightning-card title="CRAMP - {site Name}">
+        <lightning-button label="Print" slot="actions" onclick={handlePrint}></lightning-button>
+        <lightning-button label="Submit" slot="actions" onclick={handleSubmit}></lightning-button>
+
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-6">
+                <div class="slds-form-element">
+                    <p class="slds-p-horizontal_small">CRAMP-000001</p>
+
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <div class="slds-form-element">
+                    <p class="slds-p-horizontal_small">Customer</p>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <div class="slds-form-element">
+                    <p class="slds-p-horizontal_small">Site</p>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <div class="slds-form-element">
+                    <p class="slds-p-horizontal_small">Status</p>
+                </div>
+            </div>
+        </div>
+
+    </lightning-card>
+    <br>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_2-of-12">
+            <lightning-card>
+                <ul class="slds-list_dotted">
+                    <template for:each={textItems} for:item="textItem">
+                        <li key={textItem} data-index={textItem}>{textItem}
+                        </li>
+                    </template>
+                </ul>
+            </lightning-card>
+        </div>
+        <div class="slds-col slds-size_6-of-12">
+            <template if:true={displayNextSession}>
+                <div class="slds-box">
+                    <div if:true={isCustSiteSel}>
+                        <c-sample-customer-detail-comp></c-sample-customer-detail-comp><!--Add child LWC components-->
+                    </div>
+                    <div if:true={isHazardCheckSel}><!--Add child LWC components-->
+                        <h2>Second Session</h2>
+                        <p>Content for the second session {selectedText}</p>
+                    </div>
+                    <div if:true={isGenServSel}><!--Add child LWC components-->
+                        <h2>Second Session</h2>
+                        <p>Content for the second session {selectedText}</p>
+                    </div>
+                    <div if:true={isSerLocSel}><!--Add child LWC components-->
+                        <h2>Second Session</h2>
+                        <p>Content for the second session {selectedText}</p>
+                    </div>
+                    <div if:true={isSitePlanSel}><!--Add child LWC components-->
+                        <h2>Second Session</h2>
+                        <p>Content for the second session {selectedText}</p>
+                    </div>
+                    <div if:true={isConfAndSerSel}><!--Add child LWC components-->
+                        <h2>Second Session</h2>
+                        <p>Content for the second session {selectedText}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <lightning-button>
+            
+        </lightning-button>
+        <div class="slds-col slds-size_1-of-12">
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+            <lightning-card variant="Narrow" title="Customer Site Details" icon-name="standard:account">
+                <lightning-button-icon icon-name="utility:down" variant="border-filled" alternative-text="Show More"
+                    slot="actions"></lightning-button-icon>
+                <div class="slds-form-element">
+                    <p class="slds-p-horizontal_small">Name</p>
+                    <div class="slds-form-element__control">
+                        <Strong class="slds-p-horizontal_small">Burning 1995 - Main Road</Strong>
+                    </div>
+                </div>
+                <br>
+                <div class="slds-border_top">
+                    <br>
+                    <p class="slds-p-horizontal_small">Customer Number</p>
+                    <br>
+                    <p class="slds-p-horizontal_small">Site Number</p>
+                </div>
+            </lightning-card>
+            <br>
+            <lightning-card>
+                <div class="slds-text-align_center">
+                    <h1><a href="https://www.example.com">Site Contact Panel</a></h1>
+                </div>
+            </lightning-card>
+            <br>
+            <lightning-card>
+                <div class="slds-text-align_center">
+                    <h1><a href="https://www.example.com">Site Contact Panel</a></h1>
+                </div>
+            </lightning-card>
+            <br>
+            <lightning-card>
+                <div class="slds-text-align_center">
+                    <h1><a href="https://www.example.com">Induction Tranning Contact Panel</a></h1>
+                </div>
+            </lightning-card>
+            <br>
+            <lightning-card>
+                <div class="slds-text-align_center">
+                    <h1><a href="https://www.example.com">Safety Contact Panel</a></h1>
+                </div>
+            </lightning-card>
+            <br>
+            <lightning-card>
+                <div class="slds-text-align_center">
+                    <h1><a href="https://www.example.com">Attachment List</a></h1>
+                </div>
+            </lightning-card>
+        </div>
+    </div>
+</template>
